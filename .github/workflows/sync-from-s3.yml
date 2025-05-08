@@ -26,8 +26,6 @@ jobs:
           mkdir -p BLTvOSFontBundle
           aws s3 sync s3://fontsbundle/BLTvOSFontBundle BLTvOSFontBundle/
 
-          rsync -av /BLTvOSFontBundle/ ./
-
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions'
