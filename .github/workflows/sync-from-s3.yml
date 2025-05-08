@@ -24,7 +24,7 @@ jobs:
       - name: Sync S3 to repo folder
         run: |
           mkdir -p BLTvOSFontBundle
-          aws s3 sync s3://fontsbundle/BLTvOSFontBundle BLTvOSFontBundle/ --delete
+          aws s3 sync s3://fontsbundle/BLTvOSFontBundle BLTvOSFontBundle/
 
           rsync -av /tmp/s3_data/ ./
 
