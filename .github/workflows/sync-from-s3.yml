@@ -20,9 +20,10 @@ jobs:
 
       - name: Sync S3 to repo folder
         run: |
-          mkdir -p s3_data
-          aws s3 sync s3://fontsbundle/BLTvOSFontBundle s3_data
-          rsync -av --delete s3_data/ ./
+          mkdir -p /tmp/s3_data
+          aws s3 sync s3://fontsbundle/BLTvOSFontBundle /tmp/s3_data
+          rsync -av /tmp/s3_data/ ./
+
 
       - name: Commit and push changes
         run: |
